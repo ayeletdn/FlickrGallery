@@ -1,0 +1,187 @@
+body {
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	font-family: Verdana, Arial;
+}
+/* ************************	*/
+/* 			Header 			*/
+/* ************************	*/
+
+h1, h6 {
+	margin: 0 auto;
+	width: 80%;
+	font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+
+	background-color: #ddd;
+	position: relative;
+	min-width: 500px;
+}
+
+h1{
+	line-height: 110px;
+	height: 110px;
+}
+h6 {
+	text-align: center;
+	line-height: 2;
+}
+
+.header_image {
+	margin-left: 5%;
+	width: 256px;
+	height: 110px;
+	overflow: hidden;
+	float: left;
+}
+
+.header_text {
+	display: inline-block;
+	color: #555;
+}
+
+.infobutton {
+	float: right;
+	font-size: 32px;
+	margin-right: 32px;
+}
+
+.tipsy ul {
+	padding: 0 0 0 20px;
+}
+
+/* ************************	*/
+/* 			Section			*/
+/* ************************	*/
+section {
+	width: 80%;
+	min-width: 500px;
+	margin: 0 auto;
+	position: relative;
+
+	border-width: 1px 0 1px 0;
+	border-style: solid;
+	border-color: #ccc;
+
+	background-color: #D7D6CD; /* fallback */
+	/* generated using: http://www.visualcsstools.com/ */
+	background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxsaW5lYXJHcmFkaWVudCBpZD0iZzEiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjRDdENkNEIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZGRkZGRkIi8+PC9saW5lYXJHcmFkaWVudD48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2cxKSIgLz48L3N2Zz4=);
+	background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0%, #D7D6CD), color-stop(100%, #dddddd));
+	background-image: -webkit-linear-gradient(top, #D7D6CD 0%, #dddddd 100%);
+	background-image: -moz-linear-gradient(top, #D7D6CD 0%, #dddddd 100%);
+	background-image: -ms-linear-gradient(top, #D7D6CD 0%, #dddddd 100%);
+	background-image: -o-linear-gradient(top, #D7D6CD 0%, #dddddd 100%);
+	background-image: linear-gradient(to bottom, #D7D6CD 0%, #dddddd 100%);
+}
+
+.flickr-blue {
+	color: #0063dc;
+}
+.flickr-pink {
+	color: #ff0084;
+}
+
+.loading, .error, .gallery {
+	margin: 0 auto;
+	width: 80%;
+	text-align: center;	
+}
+
+.loading {
+	line-height: 330px;
+
+
+	/* transparency, based on: http://css-tricks.com/snippets/css/cross-browser-opacity/ */  	
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)"; /* IE 8 */
+	filter: alpha(opacity=35); /* IE 5-7 */
+	-moz-opacity: 0.35; /* Netscape */
+	-khtml-opacity: 0.35; /* Safari 1.x */
+	opacity: 0.35; /* Good browsers */
+}
+
+.loading img {
+	vertical-align: middle;
+}
+
+.error {
+	line-height: 100px;
+}
+
+/* Gallery */
+.gallery {
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+/* ************************	*/
+/* 		Gallery Images 		*/
+/* ************************	*/
+div.img
+{
+	display:inline-block;
+	height:330px;
+	width:60%;
+	padding: 5px 18%;
+}
+div.img img
+{
+	margin:5px;
+	height: 200px;
+	max-width: 95%;
+	padding: 1px;
+	cursor: pointer;
+}
+
+/* ************************	*/
+/* 			Details 		*/
+/* ************************	*/
+div.details {
+	height: 87px;
+	background-color: black;
+	text-align: left;
+	padding: 12px 5px;
+	border-radius: 3px;
+}
+
+div.title, div.author, div.taken
+{
+	padding:5px;
+	overflow: hidden;
+}
+div.title, div.author {
+	cursor: pointer;
+}
+
+div.taken {
+	color: #ccc;
+	font-size: 0.7em
+}
+
+/* ************************	*/
+/* 			Scrolling 		*/
+/* ************************	*/
+
+.scroll{
+	position: absolute;
+	height: 100%;
+	width: 6%;
+
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+
+   -webkit-transition:background-color 0.3s linear;  
+   -moz-transition:background-color 0.3s linear;  
+   -o-transition:background-color 0.3s linear;  
+   transition:background-color 0.3s linear;  
+}
+.scroll:hover {
+	background-color: #ddd;
+}
+.scroll.left {
+	left: 0;
+	background-image: url('../img/navigate/navigate-left-icon.png');	
+}
+.scroll.right {
+	right: 0;
+	background-image: url('../img/navigate/navigate-right-icon.png');
+}

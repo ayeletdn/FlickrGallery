@@ -1,0 +1,3 @@
+spinner: http://preloaders.net/
+logo: http://www.iconarchive.com/show/social-creatures-icons-by-fasticon/Flickr-creatures-icon.html
+navigation: http://www.iconarchive.com/show/pretty-office-5-icons-by-custom-icon-design/navigate-left-icon.html

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>La Galleria</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/h5bp.css">
+        <link rel="stylesheet" href="css/main.css">
+        <!-- http://onehackoranother.com/projects/jquery/tipsy/ -->
+        <link rel="stylesheet" href="vendor/tipsy/src/stylesheets/tipsy.css" type="text/css" />
+
+        <script src="vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- ********************************************************** -->
+        <!--                            Content                         -->
+        <!-- ********************************************************** -->
+        <header>
+            <h1>
+                <div class="header_image">
+                    <img src="img/logo/Flickr-creatures-icon_256.png" alt="logo" class="logo"/>
+                </div>
+                <div class="header_text">La Galleria</div>
+                <a class="infobutton" title="<ul><li>Click the left and right arrows to navigate the gallery.</li><li>Click the image or title to open the full image in a new window.</li><li>Click the authors name to view images of that author only.</li><li>Click the header bar to reload the gallery</li></ul>">?</a>
+            </h1>
+        </header>
+        <section>
+            <div class="scroll left"></div>
+            <div class="scroll right"></div>
+            <div class="loading">
+                <!-- spinnter icon generate by http://preloaders.net/ -->
+                <img src="img/spinner50.GIF"/>
+            </div>
+            <div class="gallery"></div>
+            <div class="error">There was a problem loading the gallery</div>
+        </section>
+        <footer>
+            <h6>Created by <a target="_blank" href="https://github.com/ayeletdn">yaelet</a></h6>
+        </footer>
+
+        <!-- ********************************************************** -->
+        <!--                            Scripts                         -->
+        <!-- ********************************************************** -->
+        <!--
+        CDN loading times for a locally-running application is too long. 
+        re-enable in production
+        <!--
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        -->
+        <script src="vendor/jquery-1.10.2.min.js"></script>
+        <!-- http://flesler.blogspot.co.il/2007/10/jqueryscrollto.html -->
+        <script src="vendor/jquery.serialScroll-1.2.2-min.js"></script>
+        <script src="vendor/jquery.scrollTo-1.4.3.1-min.js"></script>
+        <!-- http://onehackoranother.com/projects/jquery/tipsy/ -->
+        <script src="vendor/tipsy/src/javascripts/jquery.tipsy.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        
+    </body>
+</html>
