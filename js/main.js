@@ -18,7 +18,7 @@
 	}
 
 	// the URL used to retrieve the gallery data
-	DataManager.prototype.publicGalleryURI = 'http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?'
+	DataManager.prototype.publicGalleryURI = 'http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?';
 
 	// call the Flickr API to get data.
 	DataManager.prototype.getData = function(author_id){
@@ -28,19 +28,19 @@
 		$.getJSON(this.publicGalleryURI, {format: 'json', id: author_id})
 			.done(success)
 			.fail(fail);
-	}
+	};
 
 	// update GUI that get data process is about to begin
 	// TODO: use events/callbacks
 	DataManager.prototype.startGetData = function() {
 		this.dom.loadingGalleryStart();
-	}
+	};
 
 	// update GUI that get data process has completed
 	// TODO: use events/callbacks
 	DataManager.prototype.endGetData = function() {
 		this.dom.loadingGalleryComplete();
-	}
+	};
 
 	// API call completed. handle data
 	DataManager.prototype.handleNewData = function(data){
@@ -53,17 +53,17 @@
 		this.initGallery(data.items);
 		this.dom.showGallery(this.gallery);
 		this.endGetData();
-	}
+	};
 
 	// failed to get data from API. Show error
 	DataManager.prototype.failedGetData = function(){
 		this.dom.showError();
-	}
+	};
 
 	// initialize the gallery object with the gallery items
 	DataManager.prototype.initGallery = function(items){
 		this.gallery.init(items);
-	}
+	};
 
 	/**********************************************\
 	|					DomManager 					|
@@ -93,14 +93,14 @@
 		this.clearGallery();
 		this.$error.hide();
 		this.$loader.show();
-	}
+	};
 
 	// hide the loading spinner
 	DomManager.prototype.loadingGalleryComplete = function() {
 		this.$gallery.trigger( 'goto', [ 0 ] ); // trigger scroller to begining
 		this.$gallery.show();
 		this.$loader.hide();
-	}
+	};
 
 	// show the image gallery (and hide the loader)
 	DomManager.prototype.showGallery = function(oGallery) {
@@ -110,26 +110,26 @@
 			return;
 		}
 
-		var $images = oGallery.getDomImages()
+		var $images = oGallery.getDomImages();
 		this.$gallery.append($images);
-	}
+	};
 
 	// remove all gallery images
 	DomManager.prototype.clearGallery = function(){
 		this.$gallery.find('.img').remove();
-	}
+	};
 
 	// trigger reloading of the gallery
 	DomManager.prototype.reloadGallery = function() {
 		manager.getData();
-	}
+	};
 
 	// show the error div (and hide any other currently visible divs)
 	DomManager.prototype.showError = function() {
 		this.$loader.hide();
 		this.$gallery.hide();
 		this.$error.show();
-	}
+	};
 
 	/**********************************************\
 	|					Gallery 					|
@@ -153,19 +153,19 @@
 		var images = jImages instanceof Array ? jImages : [];
 		// initialize image objects
 		for (var i = 0; i < images.length; i++) {
-			this.images.push(new GalleryImage(images[i]))
-		};	
-	}
+			this.images.push(new GalleryImage(images[i]));
+		}	
+	};
 
 	// get a jQuery object which hold the jquery images
 	Gallery.prototype.getDomImages = function(){
 		var $imgs = $();
 		for (var i = 0; i < this.images.length; i++) {
 			$imgs = $imgs.add(this.images[i].getDomImage());
-		};
+		}
 
 		return $imgs;
-	}
+	};
 
 	/**********************************************\
 	|				GalleryImage 					|
@@ -184,6 +184,7 @@
 
 	// base structure for all images
 	GalleryImage.prototype.itemStructure = 
+		/*jshint multistr: true */
 		'<div><a><img/></a></div> \
 		<div class="details"> \
 		<div class="title flickr-blue">Title:</div> \
@@ -226,19 +227,20 @@
 			.append(date.toString());
 
 		// store and return value
-		return this.$img = $img;
-	}
+		this.$img = $img;
+		return $img;
+	};
 
 	// Show full image in new window
 	GalleryImage.prototype.showFullImage = function(){
 		window.open(this.jImage.link, '_blank');
-	}
+	};
 
 	// load images for this user
 	GalleryImage.prototype.getAuthorImages = function() {
 		var author_id = $(this).attr('data_author');
 		manager.getData(author_id);
-	}
+	};
 
 	// start the application
 	this.manager = new DataManager();
