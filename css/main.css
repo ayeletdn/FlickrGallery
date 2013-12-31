@@ -8,6 +8,16 @@ body {
 /* 			Header 			*/
 /* ************************	*/
 
+h1{
+	line-height: 110px;
+	height: 110px;
+	cursor: pointer;
+}
+h6 {
+	text-align: center;
+	line-height: 2;
+}
+
 h1, h6 {
 	margin: 0 auto;
 	width: 80%;
@@ -18,14 +28,6 @@ h1, h6 {
 	min-width: 500px;
 }
 
-h1{
-	line-height: 110px;
-	height: 110px;
-}
-h6 {
-	text-align: center;
-	line-height: 2;
-}
 
 .header_image {
 	margin-left: 5%;
